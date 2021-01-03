@@ -1,0 +1,630 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+body{
+    margin: 0;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 300;
+    text-decoration: none;
+}
+
+/* Header CSS */ 
+.container{
+    width: 80%;
+    margin: 0 auto;
+}
+
+header{
+    background: #55d6aa;
+}
+
+header::after{
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.logo{
+    float: left;
+    padding: 10px 0;
+}
+
+nav{
+    float: right;
+}
+
+nav ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav li{
+    display: inline-block;
+    margin-left: 70px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+
+    position: relative;
+}
+
+nav a{
+    color: #444;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+nav a:hover{
+    color: #000;
+}
+
+nav a::before{
+    content: '';
+    display: block;
+    height: 5px;
+    width: 100%;
+    background-color: #444;
+
+    position:absolute;
+    top: 0;
+    width: 0%;
+
+    transition: all ease-in-out 1000ms;
+}
+
+nav a:hover::before{
+    width: 100%;
+}
+
+/* landing page Css */
+
+#showcase{
+    background-image: url(../images/img1.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+}
+
+#showcase p{
+    font-size: 20px;
+    color: #fff;
+}
+#showcase h1{
+    color: #fff;
+    font-size: 50px;
+}
+
+#showcase .button{
+    font-size: 18px;
+    text-decoration: none;
+    color: #fff;
+    border: #fff 1px solid;
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+#showcase .button:hover{
+    background: chocolate;
+    color: #fff;
+}
+
+/* About Section CSS */
+#about{
+    box-sizing: border-box; 
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f1f1f1;
+}
+
+#about2{
+    box-sizing: border-box;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f1f1f1;
+}
+
+.about-section{
+    background: url(../images/img2.jpg) no-repeat left;
+    background-size: 55%;
+    background-color: #fdfdfd;
+    overflow: hidden;
+    padding: 100px 0;
+}
+
+.about2-section{
+    background: url(../images/img3.jpg) no-repeat right;
+    background-size: 55%;
+    background-color: #fdfdfd;
+    overflow: hidden;
+    padding: 100px 0;
+    width: 90%;
+}
+
+.inner-container{
+    width: 40%;
+    float: right;
+    background-color: #fdfdfd;
+    padding: 150px;
+}
+.inner2-container{
+    width: 40%;
+    float: left;
+    background-color: #fdfdfd;
+    padding: 150px;
+}
+
+.inner-container h1{
+    margin-bottom: 30px;
+    font-size: 30px;
+    font-weight: 900;
+}
+
+.inner2-container h1{
+    margin-bottom: 30px;
+    font-size: 30px;
+    font-weight: 900;
+}
+
+.text{
+    font-size: 13px;
+    color: #545454;
+    line-height: 30px;
+    text-align: justify;
+    margin-bottom: 40px;
+}
+
+.skills{
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+    font-size: 13px;
+}
+
+@media screen and (max-width:1200px){
+    .inner-container{
+        padding: 80px;
+    }
+}
+
+@media screen and (max-width:1200px){
+    .inner2-container{
+        padding: 80px;
+    }
+}
+
+@media screen and (max-width:1000px){
+    .about-section{
+        background-size: 100%;
+        padding: 100px 40px;
+    }
+    .inner-container-1{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:1000px){
+    .about2-section{
+        background-size: 100%;
+        padding: 100px 40px;
+    }
+    .inner2-container-1{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:600px){
+    .about-section-1{
+        padding: 0;
+    }
+    .inner-container-1{
+        padding: 60px;
+    }
+}
+
+@media screen and (max-width:600px){
+    .about2-section-1{
+        padding: 0;
+    }
+    .inner2-container-1{
+        padding: 60px;
+    }
+}
+
+/* Teams CSS */
+.teams_section{
+    height: 100vh;
+    display: flex;
+}
+
+.person{
+    flex: 1;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+    transition: .6s;
+}
+
+.person:hover{
+    flex: 3;
+}
+
+.person-pic{
+    position: absolute;
+    height: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    filter: grayscale(80%);
+    transition: .3s;
+}
+
+.person:hover .person-pic{
+    filter: grayscale(0);
+}
+
+.person-info{
+    position: absolute;
+    bottom: 10px;
+    text-align: center;
+    width: 100%;
+    opacity: 0;
+    transition: .2s;
+}
+
+.person:hover .person-info{
+    opacity: 1;
+    bottom: 60px;
+    transition-delay: .6s;
+}
+
+.person-info h3{
+    font-size: 20px;
+    color: #fff;
+}
+
+.person-info p{
+    color: #b8e994;
+    font-style: italic;
+    margin-top: 8px;
+    margin-bottom: 20px;
+}
+
+.socialmedia a{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    color: #333;
+    background-color: #b8e994;
+    line-height: 40px;
+    border-radius: 50%;
+    margin: 0 6px;
+    font-size: 18px;
+    transition: .3s linear;
+}
+
+.socialmedia a:hover{
+    color: #b8e994;
+    background-color: transparent;
+    transform: scale(1.5);
+}
+
+/*Service CSS */
+.our_services{
+    box-sizing: border-box;
+    height: 100%;
+}
+.services-section{
+    background: url(../images/pic.jpg);
+    background-size: cover;
+    padding: 60px 0;
+}
+
+.inner-width{
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+    overflow: hidden;
+}
+
+.section-title{
+    text-align: center;
+    color: #ddd;
+    text-transform: uppercase;
+    font-size: 30px;
+}
+
+.border{
+    width: 160px;
+    height: 2px;
+    background: #82ccdd;
+    margin: 40px auto;
+}
+
+.services-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.service-box{
+    max-width: 30.33%;
+    padding: 10px;
+    text-align: center;
+    color: #ddd;
+    cursor: pointer;
+}
+
+.service-icon{
+    display: inline-block;
+    width: 70px;
+    height: 70px;
+    border: 3px solid #82ccdd;
+    color: #82ccdd;
+    transform: rotate(45deg);
+    margin-bottom: 30px;
+    margin-top: 16px;
+    transition: 0.3s linear;
+}
+
+.service-icon i{
+    line-height: 70px;
+    transform: rotate(-45deg);
+    font-size: 26px;
+}
+
+.service-box:hover .service-icon{
+    background: #82ccdd;
+    color: #ddd;
+}
+
+.service-title{
+    font-size: 18px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.service-desc{
+    font-size: 14px;
+}
+
+@media screen and (max-width:960px){
+    .service-box{
+        max-width: 45%;
+    }
+}
+
+@media screen and (max-width:768px){
+    .service-box{
+        max-width: 50%;
+    }
+}
+
+@media screen and (max-width:480px){
+    .service-box{
+        max-width: 100%;
+    }
+}
+
+/* Contact CSS */
+.contact_section{
+    min-height: 100vh;
+    background: url(../images/img7.jpg) no-repeat center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-page{
+    width: 100%;
+    max-width: 1400px;
+    padding: 50px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+h2{
+    width: 100%;
+    margin-bottom: 80px;
+    text-transform: uppercase;
+    color: #322;
+    font-size: 60px;
+}
+
+.contact-info, .contact-form{
+    flex: 1;
+}
+
+.item{
+    margin-bottom: 24px;
+    font-size: 16px;
+    color: #322;
+    
+}
+
+.icon{
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    background-color: #3494db;
+    text-align: center;
+
+    color: #fff;
+    border-radius: 50%;
+    margin-right: 16px;
+}
+
+.contact-form{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.textb{
+    width: calc(50% - 10px);
+    height: 50px;
+    padding: 12px;
+    background-color: #222;
+    border: none;
+    color: #fff;
+    margin-bottom: 20px;
+}
+textarea{
+    width: 100%;
+    min-height: 200px;
+    max-height: 400px;
+    resize: vertical;
+    padding: 12px;
+    background-color: #222;
+    border: none;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.btn{
+    width: 120px;
+    height: 40px;
+    margin-left: auto;
+    background-color: #3494db;
+    border: none;
+    color: #fff;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: 2px solid #3494db;
+    transition: .3s linear;
+}
+
+.btn:hover{
+    background-color: transparent;
+    color: #3494db;
+}
+
+@media screen and (max-width: 980px){
+    .contact-page{
+        max-width: 800px;
+    }
+    h2{
+        font-size: 40px;
+        margin-bottom: 40px;
+    }
+
+    .contact-info, .contact-form{
+        flex: 100%;
+        margin-bottom: 30px;
+    }
+    .textb{
+        width: 100%;
+    }
+}
+
+/* Footer CSS */
+
+.footer{
+    width: 100vw;
+    display: block;
+    overflow: hidden;
+    padding: 70px 0;
+    box-sizing: border-box;
+    background-color: #181818;
+}
+
+.inner_footer{
+    display: block;
+    margin: 0 auto;
+    width: 1100px;
+    height: 100%;
+    
+    
+}
+
+.inner_footer .logo_container{
+    width: 35%;
+    float: left;
+    height: 100%;
+    display: block;
+}
+
+.inner_footer .logo_container img{
+    width: 150px;
+    height: auto;
+    color:white;
+}
+
+.inner_footer .footer_third{
+    width: calc(21.66666667% -20px);
+    margin-right: 10px;
+    float: left;
+    height: 100%;
+    padding: 10px;
+}
+
+.inner_footer .footer_third:last-child{
+    margin-right: 0;
+}
+
+.inner_footer .footer_third h1{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 22px;
+    color: #fff;
+    display: block;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.inner_footer .footer_third a{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    color: #fff;
+    display: block;
+    font-weight: 200;
+    width: 100%;
+    padding-bottom: 5px;
+}
+
+.inner_footer .footer_third li{
+    display: inline-block;
+    padding: 0 5px;
+    font-size: 20px;
+    color: #fff;
+}
+
+.inner_footer .footer_third span{
+    color: white;
+    font-family: 'arial';
+    font-size: 16px;
+    font-weight: 200;
+    display: block;
+    width: 100%;
+    padding-top: 20px;
+}
+
+
+@media(max-width: 600px){
+    .footer .inner_footer{
+        width: 90%;
+    }
+
+    .inner_footer .logo_container,
+    .inner_footer .footer_third{
+        width: 100%;
+        margin-bottom: 30px;
+    }
+}
